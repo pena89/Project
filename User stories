@@ -1,0 +1,28 @@
+Luis Pena
+Peter Joseph
+Raeven Lantz
+
+
+Project Deliverables
+
+	Our customer wants to take a paper based procedure and change it into a computer based one. The problem is that when Citadel students sign in for Math Lab, it is done on a sheet of paper that is then transcribed onto a computer by our customer. Mrs. Livingston has to attempt to read the student's handwriting and then match it up against a database that she had to create so that the student will get credit for attending the Math Lab from their professor.  Mrs. Livingston also needs to send out a weekly and monthly report to professor and the Learning Center to show which students are going to get help. Our app will allow for a printout of the weekly and monthly reports. It will also allow students to use CWID to be able to sign in and out whenever they use the lab.
+
+Feature: Use CWID to log in
+	As a student
+	So that no one has to read terrible handwriting anymore
+	I want to give everyone the proper credit for attending the lab.
+
+Feature: Weekly and Monthly Report
+	As Mrs. Livingston
+	SO that I can spend less time on making sure everything is correct on the excel
+	I want to spend more time else where
+
+Feature: Automatically give credit once they are signed in for thirty minutes
+	As a student
+	So that if I stay in the Math Lab for thirty minutes I receive full credit for attending the lab.
+	I want to be able to maximize my time
+
+Feature: Limit the amount of credits per week
+	As Mrs. Livingston
+	So that the students do not try to take advantage of the credit system 
+	I want to be able to limit the amount of credits earned in  a week.
