@@ -1,0 +1,4 @@
+class Movie < ActiveRecord::Base
+  attr_accessible :student, :cwid, :description, :signed_in
+ 
+end
