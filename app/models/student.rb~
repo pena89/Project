@@ -1,4 +1,4 @@
-class Movie < ActiveRecord::Base
-  attr_accessible :student, :cwid, :description, :signed_in
+class Students < ActiveRecord::Base
+  attr_accessible :names, :cwid, :signed_in
  
 end

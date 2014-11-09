@@ -1,4 +1,4 @@
--# in app/views/students/edit.html.haml
+-# edit.html.haml using partial
 
 %h1 Edit Existing Movie
 
