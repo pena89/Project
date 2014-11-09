@@ -11,6 +11,6 @@ class CreateMovies < ActiveRecord::Migration
   end
 
   def down
-    drop_table :movies
+    drop_table :students
   end
 end
