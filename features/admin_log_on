@@ -1,0 +1,17 @@
+Feature: Admin may Add Students to a database
+
+Background: On the “Admin Home Page” after logging in as Admin
+
+Scenario: Add Students and their respective information
+
+Given I am on the “Admin Home Page”
+
+And I select “Add Students”
+
+I should see “Name”, “Company”, “Math Class”, “Professor”, “CWID”
+
+And I fill in the respective text box
+
+Then I select “Push student to Database”
+
+Then I should see the “Added Students” page
