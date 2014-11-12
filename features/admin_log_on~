@@ -15,5 +15,3 @@ And I fill in the respective text box
 Then I select “Push student to Database”
 
 Then I should see the “Added Students” page
-
-
