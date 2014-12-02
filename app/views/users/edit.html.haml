@@ -1,0 +1,18 @@
+-#  This file is app/views/users/show.html.haml
+.mainContentBox
+  .mainContentBoxHeader edit profile
+  %div{:class => "textbox"}
+    = form_tag user_path(@user), :method => :put do
+      %nav
+        %table{cellpadding: "5px", width: "100%"}
+
+          %td= label :user, :name, 'Name'  
+          %td= text_field :user, 'name'
+          %tr
+          %td= label :user, :email, 'Email'
+          %td= text_field :user, 'email'
+          %tr
+          %td= label :user, :bio, 'CWID'
+          %td= text_area :user, 'cwid'
+          %tr
+      %input.button{name: "commit", type: "submit", value: "Submit"}

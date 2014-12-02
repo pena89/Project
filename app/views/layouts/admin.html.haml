@@ -1,0 +1,57 @@
+!!! 5
+%html
+  %head
+    %title Math Lab
+    = stylesheet_link_tag 'application'
+    = csrf_meta_tags
+
+  %body
+  -if !@current_user.nil?
+
+    %div#main
+      %div{:id => "header-main", :class => "header"}
+        %div{:id => "title"}
+          %h1.inline
+            =image_tag "citadel.jpeg", :height => "100px"
+          %h3.inline ADMIN PORTAL
+
+        %nav
+          -if !@current_user.nil?
+            %ul
+              %li=link_to "home", "/admins", :class => "button-square"
+              %li=link_to "schools", "/admins/schools", :class => "button-square"
+              %li=link_to "signout", "/signout", :class => "button-square"
+
+        %div.clear
+
+      %div{:id => "content"}
+
+        %div{:id => "sidebar"}
+          %div{:class => "button-pink", :id => "appointment"}
+            %h3=link_to "View & Create Accounts", "/admins/identities"
+          %div{:class => "button-pink", :id => "appointment"}
+            %h3=link_to "School Information", "/admins/schools"
+          %div{:class => "button-pink", :id => "appointment"}
+            %h3=link_to "Reports", "/admins/reports"
+          / %div{:class => "button-pink", :id => "appointment"}
+          /  %h3=link_to "Reports", "/admins"
+          %div{:id => "user_info"}
+            %h2 my information
+            %p.textbox 
+              Name: #{@current_user.name} <br/>
+              Rank: #{@current_user.rank} <br/><br/>
+              =link_to "Change password", "/change_password", :class => "link"
+
+        %div{:id => "calendar"}
+
+          - if flash[:notice]
+            #notice.message= flash[:notice]
+          - elsif flash[:warning]
+            #warning.message= flash[:warning]
+
+          = yield
+
+        %div.clear
+        %div{:id => "footer"}
+  -else
+    = yield

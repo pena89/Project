@@ -1,0 +1,18 @@
+-#  This file is app/views/users/show.html.haml
+
+
+.mainContentBox
+  .mainContentBoxHeader view profile
+  %div{:class => "textbox"}
+    %p
+      %b Name:
+      #{@user.name}
+    %p
+      %strong Email:
+      #{@user.email}
+    %p
+      %strong Bio:
+      #{@user.bio}
+
+    -if !current_user.nil? && current_user.uid == @user.uid && current_user.rank != "participant"
+      =link_to "Edit Profile", "/users/#{@user.uid}/edit", :class => "link"

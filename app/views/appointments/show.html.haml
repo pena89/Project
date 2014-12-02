@@ -1,0 +1,26 @@
+-#  This file is app/views/appointments/show.html.haml
+
+
+.mainContentBox
+  .mainContentBoxHeader view appointment
+  %div{:class => "textbox"}
+    %p
+      %b participant:
+      #{@appointment.participant}
+    %p
+      %strong counselor:
+      #{@appointment.counselor}
+    %p
+      %strong School:
+      #{@appointment.school.name}
+    %p
+      %strong Room:
+      #{@appointment.room}
+    %p
+      %strong Start:
+      #{@appointment.start_time.strftime("%I:%M%p, %m/%d/%Y")}
+    %p
+      %strong End:
+      #{@appointment.end_time.strftime("%I:%M%p, %m/%d/%Y")}
+    </br>
+    =link_to "Go back to all appointments", appointments_path, :class => "link"

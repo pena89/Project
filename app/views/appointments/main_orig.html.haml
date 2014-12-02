@@ -1,0 +1,74 @@
+-#  This file is app/views/index/index.html.haml
+
+
+%div#main
+  %div{:id => "header-main", :class => "header"}
+    %div{:id => "title"}
+      %h1.inline
+        =image_tag "fueled_logo.jpg", :height => "150px"
+      %h3.inline Math Lab
+
+    %nav
+      %ul
+        %li=link_to "profile", "#", :class => "button-square"
+        %li=link_to "calendar", "#", :class => "button-square"
+        %li=link_to "settings", "#", :class => "button-square"
+
+    %div.clear
+
+  %div{:id => "content"}
+
+    %div{:id => "sidebar"}
+      %div{:class => "button-pink", :id => "appointment"}
+        %h3=link_to "Add an Appointment", "#"
+     
+
+    %div{:id => "calendar"}
+      %h2 my appointments
+      %div.textbox
+        %table
+          %tr{:class => "day-label"}
+            %th
+              %h3 monday
+            %th
+              %h3 tuesday
+            %th
+              %h3 wednesday
+            %th
+              %h3 thursday
+            %th
+              %h3 friday
+          %tr{:class => "day-box"}
+            %th
+            %th
+            %th
+            %th
+            %th
+          %tr{:class => "day-box"}
+            %th
+            %th
+            %th
+            %th
+            %th
+          %tr{:class => "day-box"}
+            %th
+            %th
+            %th
+            %th
+            %th
+          %tr{:class => "day-box"}
+            %th
+            %th
+            %th
+            %th
+            %th
+          %tr{:class => "day-box"}
+            %th
+            %th
+            %th
+            %th
+            %th
+
+
+    %div.clear
+    %div{:id => "footer"}

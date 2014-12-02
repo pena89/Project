@@ -1,0 +1,41 @@
+-#  This file is app/views/appointments/edit.html.haml
+
+.mainContentBox
+    .mainContentBoxHeader view appointment
+    %div{:class => "textbox"}
+        = form_tag appointment_path(@appointment), :method => :put do
+            %b= label :appointment, :participant, 'participant:'
+            = text_field :appointment, 'participant'
+            %p
+            %b= label :appointment, :counselor, 'counselor:'
+            = text_field :appointment, 'counselor'
+            %p
+            %b= label :appointment, :room, 'Room:'
+            = text_field :appointment, 'room'
+            %p
+            %b= label :appointment, :date, 'Date:'
+            = label :date_month, ''
+            = select_tag :date_month, options_for_select(Appointment::MONTHS, @appointment.start_time.strftime("%m").to_i)
+            = label :date_day, '/'
+            = select_tag :date_day, options_for_select(Appointment::DAYS, @appointment.start_time.strftime("%d").to_i)
+            = label :date_year, '/'
+            = select_tag :date_year, options_for_select(Appointment::YEARS, @appointment.start_time.strftime("%Y").to_i)   
+            %p                 
+            %b= label :appointment, :start, 'Start:'
+            = label :start_hour, ''
+            = select_tag :start_hour, options_for_select(Appointment::HOURS, @appointment.start_time.strftime("%I").to_i)
+            = label :start_minutes, ':'
+            = select_tag :start_minutes, options_for_select(Appointment::MINUTES, @appointment.start_time.strftime("%M").to_i)
+            = label :start_tod, '-'
+            = select_tag :start_tod, options_for_select(Appointment::TIME_OF_DAY, @appointment.start_time.strftime("%p").to_i)
+            %p
+            %b= label :appointment, :end, 'End:'
+            = label :end_hour, ''
+            = select_tag :end_hour, options_for_select(Appointment::HOURS, @appointment.end_time.strftime("%I").to_i)
+            = label :end_minutes, ':'
+            = select_tag :end_minutes, options_for_select(Appointment::MINUTES, @appointment.end_time.strftime("%M").to_i)
+            = label :end_tod, '-'
+            = select_tag :end_tod, options_for_select(Appointment::TIME_OF_DAY, @appointment.end_time.strftime("%p").to_i)
+            %p
+            = submit_tag 'Update Appointment'
+            =link_to "Cancel", appointments_path, :class => "link"
