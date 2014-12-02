@@ -3,6 +3,7 @@ body{
 	padding:0px;
 	font-size: 15px;
 	font-family: "Times New Roman", Times, serif;
+        color: #444444;
 	min-width:1050px;
 	font-weight: 100;
 }
@@ -29,6 +30,15 @@ h3{
 }
 
 /*Header and nav css*/
+
+img {
+	padding-top: 20px;
+}
+
+div#title h3.inline {
+	position: relative;
+	top: -20px;
+}
 
 .header{
 	padding:0px;
@@ -65,11 +75,25 @@ nav li {
 }
 
 nav input{
-	border: 0px solid #000; 
+	  border: 0px solid #000; 
     background: rgba(0,0,0,0.08);
     font-size: 1em;
-    width:140px;
+    width:200px;
     padding: 5px;
+}
+
+.message {
+    width: 100%;
+    padding: 6px;
+    color: white;
+}
+
+#notice {
+    background: #b8d28b;
+}
+
+#warning {
+    background: #fab86a;
 }
 
 /*Links*/
@@ -87,6 +111,21 @@ a:hover {
 	text-shadow: 1px 1px 1px #333;
 }
 
+a.appt {
+    color: #8DC63F;
+    text-decoration: underline;
+}
+
+a.link {
+    color: #8DC63F;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #333333;
+	text-shadow: none;
+}
+
 .clear {
 	clear: both;
 }
@@ -101,11 +140,69 @@ a:hover {
     margin-bottom: 40px;
 }
 
+.appt {
+    background: #EEEEEE;
+    padding: 10px;
+    width: 100%;
+    vertical-align: center;
+}
+
+#calendar a {
+    color:#8DC63F;
+}
+
+#calendar a:visited {
+    color:#8DC63F;
+}
+
+#calendar a:hover {
+    color: #333333;
+    text-shadow: none;
+}
+
+.booked {
+    background: #F7941E;
+}
+
+.mainContentBox{
+    float: left;
+/*    padding-left: 50px;
+*/    width: 85%;
+
+}
+.mainContentBoxHeader{
+  font-family: 'Oswald', 'League Gothic';
+  font-size: 350%;
+  color:#8DC63F;
+  margin:0px;
+  padding-bottom:20px;
+}
+
+
+
 /*Grey text boxes css*/
 .textbox{
 	border: 0px solid black;
 	padding: 20px;
 	background: rgba(0,0,0,0.08);
+}
+
+textarea{
+    border: 0px solid black;
+    padding: 5px;
+    width: 200px;
+    height: 100px;
+    background: rgba(0,0,0,0.08); 
+}
+
+#school_list {
+	padding: 15px;
+	background: rgba(0,0,0,0.08);
+	overflow: auto;
+	width: 150px;
+	height: 300px;
+	float: left;
+	margin-right: 15px;
 }
 
 /*All button css*/
@@ -120,34 +217,42 @@ a:hover {
 }
 
 .button:hover {
-    background: #8dc729;
+    background: #0000FF;
     text-shadow: none;
 
 }
 
-.button-square{
+.button-square {
 	border: 0px solid black;
-    background: #b8d28b;
+    background: #FF00FF;
     margin-left:0px;
     color: white;
 	padding: 20px 10px;
 }
 
 .button-square:hover {
-    background: #8dc729;
+    background: #8DC63F;
     text-shadow: none;
 }
 
+.button-current {
+	border: 0px solid black;
+    background: #F7941E;
+    margin-left:0px;
+    color: white;
+	padding: 20px 10px;
+}
+
 .button-pink{
-    background: #ee69a4;
+    background: #F7941E;
     padding: 5px 20px 5px 20px;
     color: white;
-    margin:10px 0px;
+    margin:0px 0px 10px 0px;
     text-align: center;
 }
 
 .button-pink:hover {
-    background: #db6a9d;
+    background: #F28F09;
     text-shadow: none;
 
 }
@@ -163,6 +268,20 @@ a:hover {
 	float:right;
 	width: 65%;
 	margin-bottom: 30px;	
+}
+
+#calendar input[value="Delete"]{
+	background  : none;
+	cursor  : pointer;
+	font-size   : 16px;
+	color:#8DC63F;
+	border  : 0px solid #0f0;
+	margin      : 0px;
+	padding     : 0px;
+}
+
+#calendar input[value="Delete"]:hover{
+	color: black;
 }
 
 .day-label th {

@@ -13,12 +13,12 @@
 						<%= form_tag "/auth/identity/callback" do %>
 						<!--<div class="field">/-->
 							<li>CWID: 
-							<%= text_field_tag :auth_key %> </li>
+							
 						<!--</div>/-->
 						
 						<input class = "button" name="commit" type="submit" value="LOGIN">
 						<!--
-						<li>CWID: <input type="text" name=":auth_key"></li>
+						
 	            		<li ><a class="button" href="/auth/identity/callback">LOGIN</a></li>
 	            		/-->
 	            		<% end %>
@@ -54,7 +54,7 @@
 <!--   			<p><a class="button" href= "/signout">SIGN OUT</a>
   			</p> -->
 		<% else %>
-			<p class="textbox"> Welcome to the FuelEd appointment scheduling portal!</br></br></br></p> 
+			<p class="textbox"> Welcome to the Login page.</br></br></br></p> 
 		<% end %>
 		</div>
 	</div>

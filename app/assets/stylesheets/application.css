@@ -2,7 +2,7 @@ body{
 	margin:0px;
 	padding:0px;
 	font-size: 15px;
-	font-family: 'Helvetica';
+	font-family: "Times New Roman", Times, serif;
         color: #444444;
 	min-width:1050px;
 	font-weight: 100;
@@ -11,22 +11,22 @@ body{
 /*Header css*/
 
 h1{
-	font-family: 'Oswald', 'League Gothic';
+	font-family: "Times New Roman", Times, serif;
 	font-size: 550%;
-	color:#8DC63F;
+	color:#000000;
 	margin:10px;
 }
 
 h2{
-	font-family: 'Oswald', 'League Gothic';
+	font-family: "Times New Roman", Times, serif;
 	font-size: 250%;
-	color:#8DC63F;
+	color:#000000;
 	margin:0px;
 	padding:0px;
 }
 
 h3{
-	font-family: 'Raleway', 'Code-Light', 'Helvetica';
+	font-family: "Times New Roman", Times, serif;
 }
 
 /*Header and nav css*/
@@ -209,7 +209,7 @@ textarea{
 
 .button {
    	border: 0px solid black;
-    background: #b8d28b;
+    background: #FF00FF;
     padding: 5px 20px 5px 20px;
     margin:10px;
     margin-left:0px;
@@ -217,14 +217,14 @@ textarea{
 }
 
 .button:hover {
-    background: #8DC63F;
+    background: #0000FF;
     text-shadow: none;
 
 }
 
 .button-square {
 	border: 0px solid black;
-    background: #b8d28b;
+    background: #FF00FF;
     margin-left:0px;
     color: white;
 	padding: 20px 10px;
