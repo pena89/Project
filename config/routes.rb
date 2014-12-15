@@ -1,4 +1,4 @@
-FuelEd::Application.routes.draw do
+MathLab::Application.routes.draw do
   get "login/index"
   get "index/index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -19,9 +19,6 @@ FuelEd::Application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   match "/appointments/past" => "appointments#past", :as => :past, via: :get
   match "/reports/export" => "reports#export", :as => :export, via: :get
-  match "/appointments/:id/book_counselor" => "appointments#book_counselor", as: :book_counselor, via: :put
-  get "/appointments/:id/book_participant" => "appointments#book_participant", as: :book_participant
-  get "/appointments/:id/unbook" => "appointments#unbook", as: :unbook
   match "/user/:id/add_school" => "users#add_school", as: :add_school, via: :get
   match "/h9Hbbe894xx030" => "reset#index", as: :reset, via: :get
   match "/h9Hbbe894xx030/execute" => "reset#execute", as: :reset_execute, via: :put
