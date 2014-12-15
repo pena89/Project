@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :schools
   has_one :identity, :dependent => :destroy
   USER_TYPES = ["participant", "admin"]
   @@randIDs = (1..100000).to_a.shuffle
@@ -17,13 +16,6 @@ class User < ActiveRecord::Base
   end
 
 	def self.create_with_omniauth(auth, userRank)
-	#	create! do |user|
-    	#user.provider = auth["provider"]
-    	#user.uid = @@randIDs.pop
-    	#user.name = auth["info"]["name"]
-    	#user.email = auth["info"]["email"] 
-      #user.rank = userRank
-    	#end
 
 	user = self.new
     	user.provider = auth["provider"]
@@ -31,15 +23,12 @@ class User < ActiveRecord::Base
     	if userRank == "participant"
     		user.name = @@randIDs.pop.to_s  #auth["info"]["name"]
 		user.email = user.name + "@citadel.edu"
-		#user.schools << School.find_by_name(school)
 	else
     		user.name = auth["info"]["name"]
 		user.email = auth["info"]["email"]
 	end
         user.rank = userRank
-	#if school
-	#    user.schools << School.find_by_name(school)
-	#end
+
 	user.save
 
 	my_identity = Identity.find_by_email("c@citadel.com")
