@@ -5486,3 +5486,26 @@ Completed 200 OK in 212ms (Views: 192.5ms | ActiveRecord: 0.6ms)
   [1m[35m (14.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131111030742')
   [1m[36m (13.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131210072312')[0m
   [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (55.9ms)[0m  [1mCREATE TABLE "appointments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "participant" varchar(255), "counselor" varchar(255), "created_at" datetime, "updated_at" datetime, "school" varchar(255), "room" varchar(255), "start_time" datetime, "end_time" datetime, "school_id" integer, "user_id" integer) [0m
+  [1m[35m (19.7ms)[0m  CREATE TABLE "identities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "password_digest" varchar(255), "created_at" datetime, "updated_at" datetime, "user_id" integer) 
+  [1m[36m (12.4ms)[0m  [1mCREATE TABLE "schools" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime, "country" varchar(255), "state" varchar(255), "county" varchar(255), "city" varchar(255), "address" varchar(255), "zipcode" integer) [0m
+  [1m[35m (17.4ms)[0m  CREATE TABLE "schools_users" ("user_id" integer, "school_id" integer) 
+  [1m[36m (12.7ms)[0m  [1mCREATE INDEX "index_schools_users_on_user_id_and_school_id" ON "schools_users" ("user_id", "school_id")[0m
+  [1m[35m (17.9ms)[0m  CREATE INDEX "index_schools_users_on_user_id" ON "schools_users" ("user_id")
+  [1m[36m (182.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "uid" varchar(255), "provider" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "school" varchar(255), "rank" varchar(255), "bio" text) [0m
+  [1m[35m (44.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (17.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (14.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141010040946')[0m
+  [1m[35m (17.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131027004742')
+  [1m[36m (14.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131111030827')[0m
+  [1m[35m (17.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131110014910')
+  [1m[36m (25.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131028005642')[0m
+  [1m[35m (19.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131111030726')
+  [1m[36m (14.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131125002247')[0m
+  [1m[35m (17.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131110013536')
+  [1m[36m (13.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20131111030742')[0m
+  [1m[35m (13.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20131210072312')
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
