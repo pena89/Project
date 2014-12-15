@@ -12,15 +12,15 @@
       %div{:id => "header-main", :class => "header"}
         %div{:id => "title"}
           %h1.inline
-            =image_tag "citadel.jpeg", :height => "100px"
-          %h3.inline ADMIN PORTAL
+            =image_tag "citadel_military_logo.jpg", :height => "100px"
+          %h3.inline Admin Portal
 
         %nav
           -if !@current_user.nil?
             %ul
-              %li=link_to "home", "/admins", :class => "button-square"
-              %li=link_to "schools", "/admins/schools", :class => "button-square"
-              %li=link_to "signout", "/signout", :class => "button-square"
+              %li=link_to "Home", "/admins", :class => "button-square"
+              
+              %li=link_to "Signout", "/signout", :class => "button-square"
 
         %div.clear
 
@@ -30,13 +30,12 @@
           %div{:class => "button-pink", :id => "appointment"}
             %h3=link_to "View & Create Accounts", "/admins/identities"
           %div{:class => "button-pink", :id => "appointment"}
-            %h3=link_to "School Information", "/admins/schools"
-          %div{:class => "button-pink", :id => "appointment"}
+            
             %h3=link_to "Reports", "/admins/reports"
           / %div{:class => "button-pink", :id => "appointment"}
           /  %h3=link_to "Reports", "/admins"
           %div{:id => "user_info"}
-            %h2 my information
+            %h2 My Information
             %p.textbox 
               Name: #{@current_user.name} <br/>
               Rank: #{@current_user.rank} <br/><br/>

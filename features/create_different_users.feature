@@ -25,27 +25,17 @@ Scenario: Create an Admin account
   Then I should see "User created!"
   And I should see "Admin's Profile"
 
-Scenario: Create a Client account 
-  When I select "client" from "rank"
-  And I fill in "Name" with "Client"
-  And I fill in "Email" with "client@gmail.com"
+Scenario: Create a Participant account 
+  When I select "participant" from "rank"
+  And I fill in "Name" with "Participant"
+  And I fill in "Email" with "participant@gmail.com"
   And I fill in "Password" with "hihihi"
   And I fill in "Password confirmation" with "hihihi"
   And I press "Register"
   Then I should see "User created!" 
 
-Scenario: Create a Intern account
-  When I select "intern" from "rank"
-  And I fill in "Name" with "Intern"
-  And I fill in "Email" with "intern@gmail.com"
-  And I fill in "Password" with "hihihi"
-  And I fill in "Password confirmation" with "hihihi"
-  And I press "Register"
-  Then I should see "User created!"
-  And I should see "Intern's Profile"
-
 Scenario: Errors appear if forms left blank
-  When I select "intern" from "rank"
+  When I select "participant" from "rank"
   When I fill in "Name" with ""
   And I fill in "Email" with ""
   And I press "Register"

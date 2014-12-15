@@ -3,28 +3,11 @@
 -if current_user.rank == "admin"
   %div#main
     .mainContentBox
-      / %div{:id => "calendar"}
+      
 
-      .mainContentBoxHeader all appointments
+      .mainContentBoxHeader Home Page
+     
 
-      - @appointments.each do |appt|
-        %p
-          %table{:class => "appt"}
-            %tr
-              %td{:width => "60%"}
-                %p
-                  counselor: #{appt.counselor} <br/>
-                  School: #{appt.school.name} <br/>
-                  Time: #{appt.start_time.strftime("%I:%M%p")} - #{appt.end_time.strftime("%I:%M%p, %m/%d/%Y")}
-              %td{:width => "40%"}
-                -if appt.participant
-                  -if appt.participant == ""
-                    %p Booked by no one
-                  -else
-                    %p Booked by #{appt.participant}
 
-                =link_to "View appointment", "appointments/#{appt.id}", :class => "appt"
-
-      = will_paginate @appointments
       %div.clear
       %div{:id => "footer"}

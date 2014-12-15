@@ -36,7 +36,7 @@ $(document).ready(function(){
        //$("#password").attr("value", pw);
        //$("#password_confirmation").attr("value", pw);
        $("#name").attr("value", "default");
-       $("#email").attr("value", "c@citadel.com");
+       $("#email").attr("value", "c@fueled.com");
      }else if (rank == "admin"){
        $("#name_form").slideDown(0);
        $("#email_form").slideDown(0);
@@ -60,9 +60,9 @@ $(document).ready(function(){
 });
 </script>
  <div class = "mainContentBox">
-  <div class = "mainContentBoxHeader">Math Lab Sign-in</div>
+  <div class = "mainContentBoxHeader">New Admin/Student Account</div>
 
-  Please use your CWID to login. <br> <br>
+  Please fill in the blanks below with the correct information. <br> <br>
 
   <%= form_tag "/auth/identity/register" do %>
     <% if @identity && @identity.errors.any? %>
@@ -78,7 +78,7 @@ $(document).ready(function(){
     <nav>
       <table cellpadding="5px", width: "100%" class="textbox">
             <tr>
-              <td><%= label_tag :Login %></td>
+              <td><%= label_tag :rank %></td>
               <td><%= select_tag :rank, options_for_select(User::USER_TYPES)%>
             </td>
         </tr>
@@ -86,7 +86,7 @@ $(document).ready(function(){
               <td><%= label_tag :name %></td>
               <td><%= text_field_tag :name, @identity.try(:name) %></td>
             </tr>
-           
+
 
             <tr id="email_form">
               <td><%= label_tag :email %></td>
@@ -107,7 +107,7 @@ $(document).ready(function(){
 
     </nav>
       <div class="actions">
-        <input class = "button" name="commit" type="submit" value="Login" onClick="alertFunction()">
+        <input class = "button" name="commit" type="submit" value="Register" onClick="alertFunction()">
       </div>
   <% end %>
 
