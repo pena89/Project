@@ -25,5 +25,5 @@ class ApplicationController < ActionController::Base
     def admin_exists
       @admin_exists = User.find_by_rank("admin")
     end
-    helper_method :current_user, :admin_exists, :booked_appts
+    helper_method :current_user, :admin_exists
 end

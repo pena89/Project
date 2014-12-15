@@ -2,7 +2,7 @@ body{
 	margin:0px;
 	padding:0px;
 	font-size: 15px;
-	font-family: "Times New Roman", Times, serif;
+	font-family: "Times New Roman", Georgia, Serif;
         color: #444444;
 	min-width:1050px;
 	font-weight: 100;
@@ -11,22 +11,22 @@ body{
 /*Header css*/
 
 h1{
-	font-family: "Times New Roman", Times, serif;
+	font-family: "Times New Roman", Georgia, Serif;
 	font-size: 550%;
-	color:#000000;
+	color:#3F8DC6;
 	margin:10px;
 }
 
 h2{
-	font-family: "Times New Roman", Times, serif;
+	font-family: "Times New Roman", Georgia, Serif;
 	font-size: 250%;
-	color:#000000;
+	color:#3F8DC6;
 	margin:0px;
 	padding:0px;
 }
 
 h3{
-	font-family: "Times New Roman", Times, serif;
+	font-family: "Times New Roman", Georgia, Serif;
 }
 
 /*Header and nav css*/
@@ -43,7 +43,7 @@ div#title h3.inline {
 .header{
 	padding:0px;
 	box-shadow: 0px 4px 2px -2px gray;
-    font-family: 'Raleway', 'Code-Light', 'Helvetica';
+    font-family: "Times New Roman", Georgia, Serif;
 }
 
 .header .inline{
@@ -55,7 +55,7 @@ div#title h3.inline {
 }
 
 nav ul{
-	list-style:none;
+	list-style:none;e1
 }
 
 nav li {
@@ -89,11 +89,11 @@ nav input{
 }
 
 #notice {
-    background: #b8d28b;
+    background: #3F8DC6;
 }
 
 #warning {
-    background: #fab86a;
+    background: #3F8DC6;
 }
 
 /*Links*/
@@ -112,12 +112,12 @@ a:hover {
 }
 
 a.appt {
-    color: #8DC63F;
+    color: #3F8DC6;
     text-decoration: underline;
 }
 
 a.link {
-    color: #8DC63F;
+    color: #3F8DC6;
     text-decoration: underline;
 }
 
@@ -148,11 +148,11 @@ a:hover {
 }
 
 #calendar a {
-    color:#8DC63F;
+    color:#3F8DC6;
 }
 
 #calendar a:visited {
-    color:#8DC63F;
+    color:#3F8DC6;
 }
 
 #calendar a:hover {
@@ -161,7 +161,7 @@ a:hover {
 }
 
 .booked {
-    background: #F7941E;
+    background: #3f8dc6;
 }
 
 .mainContentBox{
@@ -171,9 +171,9 @@ a:hover {
 
 }
 .mainContentBoxHeader{
-  font-family: 'Oswald', 'League Gothic';
+  font-family: "Times New Roman", Georgia, Serif;
   font-size: 350%;
-  color:#8DC63F;
+  color:#3F8DC6;
   margin:0px;
   padding-bottom:20px;
 }
@@ -209,7 +209,7 @@ textarea{
 
 .button {
    	border: 0px solid black;
-    background: #FF00FF;
+    background: #3F8DC6;
     padding: 5px 20px 5px 20px;
     margin:10px;
     margin-left:0px;
@@ -217,34 +217,34 @@ textarea{
 }
 
 .button:hover {
-    background: #0000FF;
+    background: #3F8DC6;
     text-shadow: none;
 
 }
 
 .button-square {
 	border: 0px solid black;
-    background: #FF00FF;
+    background: #3F8DC6;
     margin-left:0px;
     color: white;
 	padding: 20px 10px;
 }
 
 .button-square:hover {
-    background: #8DC63F;
+    background: #3F8DC6;
     text-shadow: none;
 }
 
 .button-current {
 	border: 0px solid black;
-    background: #F7941E;
+    background: #3f8dc6;
     margin-left:0px;
     color: white;
 	padding: 20px 10px;
 }
 
 .button-pink{
-    background: #F7941E;
+    background: #3f8dc6;
     padding: 5px 20px 5px 20px;
     color: white;
     margin:0px 0px 10px 0px;
@@ -252,7 +252,7 @@ textarea{
 }
 
 .button-pink:hover {
-    background: #F28F09;
+    background: #3F8DC6;
     text-shadow: none;
 
 }
@@ -274,7 +274,7 @@ textarea{
 	background  : none;
 	cursor  : pointer;
 	font-size   : 16px;
-	color:#8DC63F;
+	color:#3f8dc6;
 	border  : 0px solid #0f0;
 	margin      : 0px;
 	padding     : 0px;
@@ -309,15 +309,15 @@ footer{
 /*fonts*/
 
 @font-face {
-  font-family: 'Raleway';
+  font-family: "Times New Roman", Georgia, Serif;
   font-style: normal;
   font-weight: 400;
-  src: local('Raleway'), url(http://themes.googleusercontent.com/static/fonts/raleway/v6/cIFypx4yrWPDz3zOxk7hIQLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+
 }
 
 @font-face {
-  font-family: 'Oswald';
+  font-family: "Times New Roman", Georgia, Serif;
   font-style: normal;
   font-weight: 400;
-  src: local('Oswald Regular'), local('Oswald-Regular'), url(http://themes.googleusercontent.com/static/fonts/oswald/v7/qpy-UiLNKP-VfOdbcs6r6-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+ 
 }

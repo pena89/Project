@@ -79,15 +79,15 @@ class UsersController < ApplicationController
 	end
 
     def setup_schools()
-        @schools = []
-        School.all.each do |school|
-            @schools << school.name
-        end
+       # @schools = []
+       # School.all.each do |school|
+       #     @schools << school.name
+       # end
     end
 
 	def destroy
 		@user = User.find_by_uid(params[:id])
-		@user.destroy
+		@user.delete
 		flash[:notice] = "User '#{@user.name}' had been deleted."
 		redirect_to "/admins/identities"
 	end

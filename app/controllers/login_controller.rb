@@ -4,8 +4,9 @@ class LoginController < ApplicationController
 		  	if @current_user.rank == "admin"
 		 		redirect_to "/admins"
 	        end
-	        if @current_user.rank == "participant" or  @current_user.rank == "counselor"		
-		 		redirect_to "/appointments"
+	        if @current_user.rank == "participant"		
+		 		redirect_to "/login/index"
+				flash[:notice] = "Good try."
 		 	end
 		else
 			if !admin_exists #not logged in and no admin exists yet => redicirect to login page
