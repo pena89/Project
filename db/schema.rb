@@ -13,19 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20141010040946) do
 
-  create_table "appointments", force: true do |t|
-    t.string   "participant"
-    t.string   "counselor"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "school"
-    t.string   "room"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer  "school_id"
-    t.integer  "user_id"
-  end
-
+  
   create_table "identities", force: true do |t|
     t.string   "name"
     t.string   "email"
@@ -35,25 +23,6 @@ ActiveRecord::Schema.define(version: 20141010040946) do
     t.integer  "user_id"
   end
 
-  create_table "schools", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "country"
-    t.string   "state"
-    t.string   "county"
-    t.string   "city"
-    t.string   "address"
-    t.integer  "zipcode"
-  end
-
-  create_table "schools_users", id: false, force: true do |t|
-    t.integer "user_id"
-    t.integer "school_id"
-  end
-
-  add_index "schools_users", ["user_id", "school_id"], name: "index_schools_users_on_user_id_and_school_id"
-  add_index "schools_users", ["user_id"], name: "index_schools_users_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -62,7 +31,6 @@ ActiveRecord::Schema.define(version: 20141010040946) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "school"
     t.string   "rank"
     t.text     "bio"
   end
