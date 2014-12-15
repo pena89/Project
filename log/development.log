@@ -2986,3 +2986,264 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:46:1
 
 
 Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 22:46:17 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-14 22:58:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/login/index" for 127.0.0.1 at 2014-12-14 22:58:31 -0400
+Processing by LoginController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 350ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2014-12-14 22:58:32 -0400
+Processing by AdminsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered admins/index.html.haml within layouts/admin (20.3ms)
+Completed 200 OK in 372ms (Views: 205.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:58:32 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 22:58:32 -0400
+
+
+Started GET "/admins/identities" for 127.0.0.1 at 2014-12-14 22:58:37 -0400
+Processing by IdentitiesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+DEPRECATION WARNING: This dynamic method is deprecated. Please use e.g. Post.where(...).all instead. (called from index at /home/saasbook/Desktop/Project/app/controllers/identities_controller.rb:24)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."rank" IN ('participant', 'admin') LIMIT 10 OFFSET 0[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_identities_index_html_haml__755053793__644031958 at /home/saasbook/Desktop/Project/app/views/identities/index.html.haml:20)
+  Rendered identities/index.html.haml within layouts/admin (27.2ms)
+Completed 200 OK in 69ms (Views: 46.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:58:38 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 22:58:38 -0400
+
+
+Started GET "/admins/identities/new" for 127.0.0.1 at 2014-12-14 22:58:41 -0400
+Processing by IdentitiesController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered identities/new.html.erb within layouts/admin (14.8ms)
+Completed 200 OK in 53ms (Views: 41.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:58:41 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 22:58:42 -0400
+
+
+Started POST "/auth/identity/register" for 127.0.0.1 at 2014-12-14 22:58:53 -0400
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mIdentity Exists (0.5ms)[0m  SELECT 1 AS one FROM "identities" WHERE "identities"."email" = 'c@citadel.com' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (47.3ms)[0m  [1mINSERT INTO "identities" ("created_at", "email", "name", "password_digest", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", Mon, 15 Dec 2014 02:58:54 UTC +00:00], ["email", "c@citadel.com"], ["name", "default"], ["password_digest", "$2a$10$wkaEFVRExWELXqxS6/KPsO7HIE/J88fQxKBf.Ri/9OWcjNqivFbIC"], ["updated_at", Mon, 15 Dec 2014 02:58:54 UTC +00:00]]
+  [1m[35m (118.5ms)[0m  commit transaction
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"woEAyzHqRt9gQ+77U1okO7ngeR5TRHoAXsTHtlSIZiE=", "rank"=>"participant", "name"=>"default", "email"=>"c@citadel.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Register", "provider"=>"identity"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'identity' AND "users"."uid" = '5' ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mUser Exists (6.1ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = '1791@citadel.edu' LIMIT 1[0m
+  [1m[35mSQL (3.7ms)[0m  INSERT INTO "users" ("created_at", "email", "name", "provider", "rank", "uid", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Mon, 15 Dec 2014 02:58:54 UTC +00:00], ["email", "1791@citadel.edu"], ["name", "1791"], ["provider", "identity"], ["rank", "participant"], ["uid", "5"], ["updated_at", Mon, 15 Dec 2014 02:58:54 UTC +00:00]]
+  [1m[36m (25.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mIdentity Load (0.5ms)[0m  SELECT "identities".* FROM "identities" WHERE "identities"."email" = 'c@citadel.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mIdentity Exists (0.5ms)[0m  SELECT 1 AS one FROM "identities" WHERE ("identities"."email" = '1791@citadel.edu' AND "identities"."id" != 5) LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE "identities" SET "email" = ?, "updated_at" = ? WHERE "identities"."id" = 5[0m  [["email", "1791@citadel.edu"], ["updated_at", Mon, 15 Dec 2014 02:58:54 UTC +00:00]]
+  [1m[35m (25.8ms)[0m  commit transaction
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+Redirected to http://localhost:3000/admins/identities/5
+Completed 302 Found in 173ms (ActiveRecord: 65.1ms)
+
+
+Started GET "/admins/identities/5" for 127.0.0.1 at 2014-12-14 22:58:54 -0400
+Processing by IdentitiesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '5' LIMIT 1
+  [1m[36mIdentity Load (0.6ms)[0m  [1mSELECT "identities".* FROM "identities" WHERE "identities"."email" = '1791@citadel.edu' LIMIT 1[0m
+  Rendered identities/show.html.haml within layouts/admin (17.1ms)
+Completed 200 OK in 49ms (Views: 28.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:58:54 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 22:58:54 -0400
+
+
+Started GET "/signout" for 127.0.0.1 at 2014-12-14 22:58:59 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/?notice=Signed+out%21
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?notice=Signed+out%21" for 127.0.0.1 at 2014-12-14 22:58:59 -0400
+
+
+Started GET "/login/index" for 127.0.0.1 at 2014-12-14 22:58:59 -0400
+Processing by LoginController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."rank" = 'admin' LIMIT 1
+  Rendered login/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 109ms (Views: 89.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:58:59 -0400
+
+
+Started POST "/auth/identity/callback" for 127.0.0.1 at 2014-12-14 22:59:08 -0400
+  [1m[36mIdentity Load (0.5ms)[0m  [1mSELECT "identities".* FROM "identities" WHERE "identities"."email" = '179@citadel.edu' ORDER BY "identities"."id" ASC LIMIT 1[0m
+
+
+Started GET "/auth/failure?message=invalid_credentials&strategy=identity" for 127.0.0.1 at 2014-12-14 22:59:08 -0400
+Processing by SessionsController#failure as HTML
+  Parameters: {"message"=>"invalid_credentials", "strategy"=>"identity"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-14 22:59:08 -0400
+
+
+Started GET "/login/index" for 127.0.0.1 at 2014-12-14 22:59:08 -0400
+Processing by LoginController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."rank" = 'admin' LIMIT 1
+  Rendered login/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 51ms (Views: 34.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:59:08 -0400
+
+
+Started POST "/auth/identity/callback" for 127.0.0.1 at 2014-12-14 22:59:33 -0400
+  [1m[36mIdentity Load (0.7ms)[0m  [1mSELECT "identities".* FROM "identities" WHERE "identities"."email" = 'penal1@citadel.edu' ORDER BY "identities"."id" ASC LIMIT 1[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"woEAyzHqRt9gQ+77U1okO7ngeR5TRHoAXsTHtlSIZiE=", "auth_key"=>"penal1@citadel.edu", "password"=>"[FILTERED]", "commit"=>"Login", "provider"=>"identity"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'identity' AND "users"."uid" = '1' ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2014-12-14 22:59:34 -0400
+Processing by AdminsController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered admins/index.html.haml within layouts/admin (0.7ms)
+Completed 200 OK in 50ms (Views: 35.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:59:34 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 22:59:34 -0400
+
+
+Started GET "/admins/identities" for 127.0.0.1 at 2014-12-14 22:59:37 -0400
+Processing by IdentitiesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+DEPRECATION WARNING: This dynamic method is deprecated. Please use e.g. Post.where(...).all instead. (called from index at /home/saasbook/Desktop/Project/app/controllers/identities_controller.rb:24)
+  [1m[36mUser Load (9.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."rank" IN ('participant', 'admin') LIMIT 10 OFFSET 0[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_identities_index_html_haml__755053793__644031958 at /home/saasbook/Desktop/Project/app/views/identities/index.html.haml:20)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_identities_index_html_haml__755053793__644031958 at /home/saasbook/Desktop/Project/app/views/identities/index.html.haml:20)
+  Rendered identities/index.html.haml within layouts/admin (8.3ms)
+Completed 200 OK in 65ms (Views: 36.1ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 22:59:38 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 22:59:38 -0400
+
+
+Started GET "/admins" for 127.0.0.1 at 2014-12-14 23:04:19 -0400
+Processing by AdminsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered admins/index.html.haml within layouts/admin (0.4ms)
+Completed 200 OK in 35ms (Views: 22.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 23:04:19 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 23:04:19 -0400
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2014-12-14 23:04:22 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered reports/index.html.haml within layouts/admin (158.5ms)
+Completed 200 OK in 192ms (Views: 185.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 23:04:22 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 23:04:22 -0400
+
+
+Started GET "/admins/identities" for 127.0.0.1 at 2014-12-14 23:04:26 -0400
+Processing by IdentitiesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+DEPRECATION WARNING: This dynamic method is deprecated. Please use e.g. Post.where(...).all instead. (called from index at /home/saasbook/Desktop/Project/app/controllers/identities_controller.rb:24)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."rank" IN ('participant', 'admin') LIMIT 10 OFFSET 0[0m
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_identities_index_html_haml__755053793__644031958 at /home/saasbook/Desktop/Project/app/views/identities/index.html.haml:20)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_identities_index_html_haml__755053793__644031958 at /home/saasbook/Desktop/Project/app/views/identities/index.html.haml:20)
+  Rendered identities/index.html.haml within layouts/admin (19.0ms)
+Completed 200 OK in 68ms (Views: 31.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 23:04:26 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 23:04:26 -0400
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2014-12-14 23:04:28 -0400
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered reports/index.html.haml within layouts/admin (18.9ms)
+Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 23:04:28 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 23:04:29 -0400
+
+
+Started GET "/admins/identities" for 127.0.0.1 at 2014-12-14 23:04:31 -0400
+Processing by IdentitiesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+DEPRECATION WARNING: This dynamic method is deprecated. Please use e.g. Post.where(...).all instead. (called from index at /home/saasbook/Desktop/Project/app/controllers/identities_controller.rb:24)
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."rank" IN ('participant', 'admin') LIMIT 10 OFFSET 0
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_identities_index_html_haml__755053793__644031958 at /home/saasbook/Desktop/Project/app/views/identities/index.html.haml:20)
+DEPRECATION WARNING: :confirm option is deprecated and will be removed from Rails 4.1. Use 'data: { confirm: 'Text' }' instead. (called from block in _app_views_identities_index_html_haml__755053793__644031958 at /home/saasbook/Desktop/Project/app/views/identities/index.html.haml:20)
+  Rendered identities/index.html.haml within layouts/admin (12.0ms)
+Completed 200 OK in 56ms (Views: 25.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 23:04:31 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 23:04:31 -0400
+
+
+Started GET "/admins" for 127.0.0.1 at 2014-12-14 23:04:36 -0400
+Processing by AdminsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered admins/index.html.haml within layouts/admin (0.4ms)
+Completed 200 OK in 34ms (Views: 20.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-14 23:04:36 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-14 23:04:36 -0400
