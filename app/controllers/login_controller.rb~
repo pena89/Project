@@ -5,7 +5,7 @@ class LoginController < ApplicationController
 		 		redirect_to "/admins"
 	        end
 	        if @current_user.rank == "participant"		
-		 		redirect_to root_url
+		 		redirect_to "/login/index"
 				flash[:notice] = "Good try."
 		 	end
 		else
