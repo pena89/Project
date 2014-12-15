@@ -2,7 +2,7 @@ Feature: Creating an Account
 
   As a administrator 
   So that I can populate the website with users
-  I want to make a new account for admins and participants
+  I want to make a new account for supervisors, clients and interns
 
 Background:
   Given I am on the homepage
@@ -17,10 +17,10 @@ Background:
 
 Scenario: Create an Admin account 
   When I select "admin" from "rank"
-  And I fill in "Name" with "Pena"
-  And I fill in "Email" with "penal1@citadel.edu"
-  And I fill in "Password" with "qwer"
-  And I fill in "Password confirmation" with "qwer"
+  And I fill in "Name" with "Admin"
+  And I fill in "Email" with "admin@gmail.com"
+  And I fill in "Password" with "hihihi"
+  And I fill in "Password confirmation" with "hihihi"
   And I press "Register"
   Then I should see "User created!"
   And I should see "Admin's Profile"
