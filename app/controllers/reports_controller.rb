@@ -4,23 +4,23 @@ class ReportsController < AdminsController
 
 	def index
 		@reports = nil
-		@all_users = []
-		user.all.each do |user|
-			@all_users << user.name
-		end
+		#@all_schools = []
+		#School.all.each do |school|
+		#	@all_schools << school.name
+		#end
 
-	    @selected_users = params[:user_names] || session[:user_names] || {}
+	    @selected_schools = params[:school_names] || session[:school_names] || {}
 
-	     if @selected_users == {}
-	       @selected_users = Hash[@all_users.map {|user| [user, user]}]
-	     end
+	    # if @selected_schools == {}
+	    #   @selected_schools = Hash[@all_schools.map {|school| [school, school]}]
+	    # end
     
-	   # if params[:user_names] != session[:user_names]
-	      session[:user_names] = @selected_users
-	      redirect_to :user_names => @selected_users and return
-	    end
-    	 @users = User.find_all_by_rank(@selected_users.keys) 
-	     @users = User.paginate(:page => params[:page], :per_page => 5).find_all_by_rank(@selected_users.keys) 
+	    # if params[:school_names] != session[:school_names]
+	    #   session[:school_names] = @selected_schools
+	    #   redirect_to :school_names => @selected_schools and return
+	    # end
+    	# # @schools = User.find_all_by_rank(@selected_schools.keys) 
+	    # @schools = User.paginate(:page => params[:page], :per_page => 5).find_all_by_rank(@selected_schools.keys) 
 
 
 
@@ -34,9 +34,9 @@ class ReportsController < AdminsController
 	end
 
 	def new
-		@all_users = []
-		user.all.each do |user|
-			@all_users << user.name
+		@all_schools = []
+		School.all.each do |school|
+			@all_schools << school.name
 		end
 	end
 
@@ -45,22 +45,22 @@ class ReportsController < AdminsController
 	def export
 
 	  type = params[:report_type]
-	  user_names = ["Date"]
-	  all_users = []
-	  user.all.each do |user|
-	    all_users << [user.name, "1"]
-	  end
+	  school_names = ["Date"]
+	  #all_schools = []
+	#  School.all.each do |school|
+	  #  all_schools << [school.name, "1"]
+	#  end
 	#  selected = params[:school_names] || all_schools
-	 # selected.each do |user|
+	 # selected.each do |school|
 	 #   school_names << school[0]
-	  end
+	 # end
 
 	  output = [].to_csv
 	
 	  if (type == "Weekly Report" || type == "Both")
 	    output << [ "Weekly Report" ].to_csv
 	    output << school_names.to_csv
-	    rows = Appointment.getHoursReport2DArray(user, params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
+	    rows = Appointment.getHoursReport2DArray(selected, params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
 	    rows.each do |row|
 	      output << row
 	    end
@@ -73,7 +73,7 @@ class ReportsController < AdminsController
 	    end
 	    output << [ "Monthly Report" ].to_csv
 	    output << school_names.to_csv
-	    rows = Appointment.getNumPeopleReport2DArray(user, params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
+	    rows = Appointment.getNumPeopleReport2DArray(selected, params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
 	    rows.each do |row|
 	      output << row
 	    end
@@ -85,11 +85,11 @@ class ReportsController < AdminsController
 	end
 	
 	def getHoursReport2DArray
-		Appointment.getHoursReport2DArray(@selected_users, params[:start_month], params[:start_year], params[:end_month], params[:end_year])
+		Appointment.getHoursReport2DArray(@selected_schools, params[:start_month], params[:start_year], params[:end_month], params[:end_year])
 	end
 
 	def getNumPeopleReport2DArray
-		Appointment.getNumPeopleReport2DArray(@selected_users, params[:start_month], params[:start_year], params[:end_month], params[:end_year])
+		Appointment.getNumPeopleReport2DArray(@selected_schools, params[:start_month], params[:start_year], params[:end_month], params[:end_year])
 	end
 
 end
