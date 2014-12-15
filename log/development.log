@@ -5215,3 +5215,101 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 12:07:5
 
 
 Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-15 12:07:51 -0400
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2014-12-15 12:10:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReportsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered reports/index.html.haml within layouts/admin (84.7ms)
+Completed 200 OK in 411ms (Views: 193.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 12:10:30 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-15 12:10:30 -0400
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Weekly+Reports+&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:10:32 -0400
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Weekly Reports ", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered text template (0.1ms)
+Sent data MathLabReports_Weekly Reports _Dec-15-2014.csv (21.3ms)
+Completed 200 OK in 39ms (Views: 20.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Weekly+Reports+&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:11:33 -0400
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Weekly Reports ", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered text template (0.1ms)
+Sent data MathLabReports_Weekly Reports _Dec-15-2014.csv (3.3ms)
+Completed 200 OK in 255ms (Views: 2.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2014-12-15 12:12:11 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered reports/index.html.haml within layouts/admin (7.6ms)
+Completed 200 OK in 178ms (Views: 15.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 12:12:12 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-15 12:12:12 -0400
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Weekly+Reports+&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:12:13 -0400
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Weekly Reports ", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered text template (0.1ms)
+Sent data MathLabReports_Weekly Reports _Dec-15-2014.csv (5.7ms)
+Completed 200 OK in 23ms (Views: 5.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2014-12-15 12:13:17 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered reports/index.html.haml within layouts/admin (7.7ms)
+Completed 200 OK in 179ms (Views: 16.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 12:13:17 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-15 12:13:17 -0400
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Weekly+Reports+&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:13:19 -0400
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Weekly Reports ", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered text template (0.1ms)
+Sent data MathLabReports_Weekly Reports _Dec-15-2014.csv (1.7ms)
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/admins/reports" for 127.0.0.1 at 2014-12-15 12:14:14 -0400
+Processing by ReportsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+  Rendered reports/index.html.haml within layouts/admin (11.3ms)
+Completed 200 OK in 196ms (Views: 22.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 12:14:14 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-15 12:14:14 -0400
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Weekly+Reports+&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:14:16 -0400
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Weekly Reports ", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered text template (0.1ms)
+Sent data MathLabReports_Weekly Reports _Dec-15-2014.csv (8.5ms)
+Completed 200 OK in 23ms (Views: 8.1ms | ActiveRecord: 0.7ms)
