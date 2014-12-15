@@ -148,7 +148,7 @@ class Appointment < ActiveRecord::Base
 
 		user_total_arr = [ "Total" ]
 		users.each do |user_name|
-			user_total_arr << school_totals[user_name[0]]
+			user_total_arr << user_totals[user_name[0]]
 		end
 
 		output = []
