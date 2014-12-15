@@ -1,5 +1,4 @@
 class Appointment < ActiveRecord::Base
-	belongs_to :school
 	belongs_to :user
 	# validates :participant, :presence => true, :length => { :maximum => 50 }
 	# validates :counselor, :presence => true, :length => { :maximum => 50 }
@@ -55,7 +54,7 @@ class Appointment < ActiveRecord::Base
 
 		table = {}
 
-		suser_totals = Hash.new(0)
+		user_totals = Hash.new(0)
 
 		months_to_iter_over.times do
 
@@ -112,7 +111,7 @@ class Appointment < ActiveRecord::Base
 	end
 
 
-	def self.getNumPeopleReport2DArray(users, start_month, start_year, end_month, end_year)
+	def self.getNumPeopleReport2DArray(@all_users, start_month, start_year, end_month, end_year)
 
 		start_datetime = DateTime.new(start_year, start_month, 1)
 		end_datetime = DateTime.new(end_year, end_month+1, 1)
@@ -148,7 +147,7 @@ class Appointment < ActiveRecord::Base
 
 		user_total_arr = [ "Total" ]
 		users.each do |user_name|
-			user_total_arr << school_totals[user_name[0]]
+			user_total_arr << user_totals[user_name[0]]
 		end
 
 		output = []
