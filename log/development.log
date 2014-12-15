@@ -3488,3 +3488,54 @@ Completed 200 OK in 38ms (Views: 26.8ms | ActiveRecord: 0.6ms)
 
 
 Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 08:54:36 -0400
+
+
+Started GET "/login/index" for 127.0.0.1 at 2014-12-15 09:27:15 -0400
+Processing by LoginController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."rank" = 'admin' LIMIT 1[0m
+  Rendered login/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 313ms (Views: 53.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 09:27:16 -0400
+
+
+Started POST "/auth/identity/callback" for 127.0.0.1 at 2014-12-15 09:27:25 -0400
+  [1m[35mIdentity Load (0.5ms)[0m  SELECT "identities".* FROM "identities" WHERE "identities"."email" = 'penal1@citadel.edu' ORDER BY "identities"."id" ASC LIMIT 1
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QUR/nNm1LVVnDdeysTtqIPjmkdezLjxNyVuTauLfbpc=", "auth_key"=>"penal1@citadel.edu", "password"=>"[FILTERED]", "commit"=>"Login", "provider"=>"identity"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'identity' AND "users"."uid" = '1' ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/admins
+Completed 302 Found in 16ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/admins" for 127.0.0.1 at 2014-12-15 09:27:25 -0400
+Processing by AdminsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered admins/index.html.haml within layouts/admin (0.4ms)
+Completed 200 OK in 73ms (Views: 23.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 09:27:26 -0400
+
+
+Started GET "/assets/citadel_military_logo.jpg" for 127.0.0.1 at 2014-12-15 09:27:26 -0400
+
+
+Started GET "/signout" for 127.0.0.1 at 2014-12-15 09:27:39 -0400
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/?notice=Signed+out%21
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/?notice=Signed+out%21" for 127.0.0.1 at 2014-12-15 09:27:39 -0400
+
+
+Started GET "/login/index" for 127.0.0.1 at 2014-12-15 09:27:39 -0400
+Processing by LoginController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."rank" = 'admin' LIMIT 1[0m
+  Rendered login/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-15 09:27:39 -0400
