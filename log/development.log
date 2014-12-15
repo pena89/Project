@@ -5313,3 +5313,48 @@ Processing by ReportsController#export as HTML
   Rendered text template (0.1ms)
 Sent data MathLabReports_Weekly Reports _Dec-15-2014.csv (8.5ms)
 Completed 200 OK in 23ms (Views: 8.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Monthly+Report&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:16:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Monthly Report", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[35mUser Load (10.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+Completed 500 Internal Server Error in 275ms
+
+NameError (undefined local variable or method `selected' for #<ReportsController:0xb36f4650>):
+  app/controllers/reports_controller.rb:52:in `export'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.9ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (111.2ms)
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Monthly+Report&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:17:01 -0400
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Monthly Report", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1[0m
+Completed 500 Internal Server Error in 185ms
+
+NameError (undefined local variable or method `users' for #<Class:0xb2b6e4fc>):
+  app/models/appointment.rb:131:in `block in getNumPeopleReport2DArray'
+  app/models/appointment.rb:127:in `times'
+  app/models/appointment.rb:127:in `getNumPeopleReport2DArray'
+  app/controllers/reports_controller.rb:52:in `export'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-4.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (83.8ms)
+
+
+Started GET "/reports/export?utf8=%E2%9C%93&report_type=Weekly+Reports+&start_month=1&start_year=2014&end_month=1&end_year=2014&commit=Export" for 127.0.0.1 at 2014-12-15 12:17:29 -0400
+Processing by ReportsController#export as HTML
+  Parameters: {"utf8"=>"✓", "report_type"=>"Weekly Reports ", "start_month"=>"1", "start_year"=>"2014", "end_month"=>"1", "end_year"=>"2014", "commit"=>"Export"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."uid" = '1' LIMIT 1
+  Rendered text template (0.1ms)
+Sent data MathLabReports_Weekly Reports _Dec-15-2014.csv (192.9ms)
+Completed 200 OK in 212ms (Views: 192.5ms | ActiveRecord: 0.6ms)

@@ -36,7 +36,7 @@ class ReportsController < AdminsController
 	  if (type == "Weekly Report" || type == "Both")
 	    output << [ "Weekly Report" ].to_csv
 	    output << school_names.to_csv
-	    rows = Appointment.getHoursReport2DArray(selected, params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
+	    rows = Appointment.getHoursReport2DArray( params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
 	    rows.each do |row|
 	      output << row
 	    end
@@ -49,7 +49,7 @@ class ReportsController < AdminsController
 	    end
 	    output << [ "Monthly Report" ].to_csv
 	    output << user_names.to_csv
-	    rows = Appointment.getNumPeopleReport2DArray(selected, params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
+	    rows = Appointment.getNumPeopleReport2DArray( params[:start_month].to_i, params[:start_year].to_i, params[:end_month].to_i, params[:end_year].to_i).to_a
 	    rows.each do |row|
 	      output << row
 	    end
