@@ -47,20 +47,8 @@
               Rank: #{@current_user.rank} <br/><br/>
               =link_to "Change password", change_password_path, :class => "link"
               -if @current_user.rank != "admin"
-                %br/
-                =link_to "View Past Appointments", past_path, :class => "link"
-          -if @current_user.rank != "admin"
-            %div{:id => "workshops"}
-              %h2 upcoming appointments
-              - booked_appts.sort_by{|appt| appt.start_time}.each do |appt|
-                %p.textbox
-                  Counselor: #{appt.counselor} <br/>
-                  Participant: #{appt.participant} <br/>
-                  School: #{appt.school.name} <br/>
-                  Time: #{appt.start_time.strftime("%I:%M%p")} - #{appt.end_time.strftime("%I:%M%p, %m/%d/%Y")}<br/>
-                  =link_to "Unbook", unbook_url(appt.id), :class => "link"
-
-        %div{:id => "calendar"}
+           
+         
 
           - if flash[:notice]
             #notice.message= flash[:notice]
