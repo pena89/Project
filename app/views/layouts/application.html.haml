@@ -15,9 +15,7 @@
             %a{:href => "/"}
               =image_tag "citadel_military_logo.jpg", :height => "100px"
           %h3.inline
-            -if @current_user.rank == "counselor" || @current_user.rank == "intern"
-              COUNSELOR PORTAL
-            -elsif @current_user.rank == "participant" || @current_user.rank == "client"
+            if @current_user.rank == "participant" || @current_user.rank == "client"
               PARTICIPANT PORTAL
             -else
               ADMIN PORTAL
